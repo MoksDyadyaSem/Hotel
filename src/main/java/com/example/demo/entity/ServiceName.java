@@ -12,6 +12,7 @@ public class ServiceName {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @SuppressWarnings("JpaDataSourceORMInspection")
     @Column(name = "service_name", nullable = false, unique = true)
     private String serviceName;
 }
