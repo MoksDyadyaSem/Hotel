@@ -21,10 +21,10 @@ public class Main {
 
 
             session.persist(new Employee(
-                    "alex",
-                    "89057503960",
-                    "somemail@mail.ru",
-                    "technician"
+                    "123",
+                    "123",
+                    "123@mail.ru",
+                    "123"
             ));
 
             session.getTransaction().commit();
