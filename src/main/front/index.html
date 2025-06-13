@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Запрос через JS</title>
+</head>
+<body>
+
+<h2>Список сотрудников</h2>
+<button onclick="getEmployees()">Получить сотрудников</button>
+<ul id="employeeList"></ul>
+
+<h2>Создать нового сотрудника</h2>
+<form id="employeeForm">
+    <label>Имя:</label><br>
+    <input type="text" id="fullName"><br>
+
+    <label>Телефон:</label><br>
+    <input type="text" id="phoneNumber"><br>
+
+    <label>Email:</label><br>
+    <input type="text" id="email"><br>
+
+    <label>Должность:</label><br>
+    <input type="text" id="position"><br>
+
+    <button type="submit">Сохранить</button>
+</form>
+
+<script src="script.js"></script>
+
+</body>
+</html>
