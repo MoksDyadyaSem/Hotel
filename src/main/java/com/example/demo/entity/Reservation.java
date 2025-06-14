@@ -22,11 +22,11 @@ public class Reservation {
 
     @OneToOne
     @JoinColumn(name = "guest_id")
-    private Guest guestId;
+    private Guest guest;
 
     @OneToOne
     @JoinColumn(name = "employee_id")
-    private Employee employeeId;
+    private Employee employee;
 
     @Column(name = "date_in")
     private LocalDate dateIn;
@@ -39,5 +39,5 @@ public class Reservation {
 
     @OneToOne
     @JoinColumn(name = "room_id")
-    private Room roomId;
+    private Room room;
 }

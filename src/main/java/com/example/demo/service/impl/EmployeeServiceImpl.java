@@ -32,6 +32,12 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
+    public Employee findEmployeeById(Long id) {
+        return employeeRepository.findById(id).orElse(null);
+    }
+
+
+    @Override
     @Transactional
     public void saveEmployee(Employee employee) {
         employeeRepository.save(employee);
@@ -43,6 +49,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         employeeDTO.setEmail(employee.getEmail());
         employeeDTO.setPhoneNumber(employee.getPhoneNumber());
         employeeDTO.setPosition(employee.getPosition());
+        employeeDTO.setReservation(employee.getReservation());
         return employeeDTO;
     }
     // это ответственность сервиса обработать данные, которые пришли из репозитория

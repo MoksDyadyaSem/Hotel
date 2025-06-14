@@ -10,5 +10,6 @@ import java.util.List;
 public interface EmployeeService {
     List<EmployeeDTO> findAllEmployeesDTO();
     List<Employee> findAllEmployees();
+    Employee findEmployeeById(Long id);
     void saveEmployee(Employee employee);
 }

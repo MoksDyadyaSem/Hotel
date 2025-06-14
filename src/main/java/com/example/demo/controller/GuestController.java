@@ -2,12 +2,14 @@ package com.example.demo.controller;
 
 import com.example.demo.DTO.GuestDTO;
 import com.example.demo.entity.Guest;
+import com.example.demo.entity.Reservation;
 import com.example.demo.service.GuestService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,5 +37,10 @@ public class GuestController {
         return ResponseEntity.status(HttpStatus.CREATED).body(guest);
     }
 
+    @GetMapping("/{id}/reservation")
+    public ResponseEntity<Reservation> getGuestReservation(@PathVariable Long id) {
+        Reservation reservation = guestService.findGuestById(id).getReservation();
+        return ResponseEntity.ok(reservation);
+    }
 
 }

@@ -1,5 +1,6 @@
 package com.example.demo.DTO;
 
+import com.example.demo.entity.Reservation;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,4 +11,5 @@ public class EmployeeDTO {
     private String email;
     private String phoneNumber;
     private String position;
+    private Reservation reservation;
 }

@@ -3,12 +3,14 @@ package com.example.demo.controller;
 
 import com.example.demo.DTO.EmployeeDTO;
 import com.example.demo.entity.Employee;
+import com.example.demo.entity.Reservation;
 import com.example.demo.service.EmployeeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,6 +36,11 @@ public class EmployeeController {
     @GetMapping("/get-all") // работает
     public List<Employee> getEmployees() {
         return employeeService.findAllEmployees();
+    }
+
+    @GetMapping("/{id}/reservation") // работает
+    public Reservation getEmployeesReservation(@PathVariable Long id) {
+        return employeeService.findEmployeeById(id).getReservation();
     }
 
     @PostMapping("/save_employee") // работает

@@ -35,6 +35,11 @@ public class GuestServiceImpl implements GuestService {
         guestRepository.save(guest);
     }
 
+    @Override
+    public Guest findGuestById(Long id) {
+        return guestRepository.findById(id).orElse(null);
+    }
+
     private GuestDTO toDTO(Guest guest) {
         GuestDTO guestDTO = new GuestDTO();
         guestDTO.setFullName(guest.getFullName());
